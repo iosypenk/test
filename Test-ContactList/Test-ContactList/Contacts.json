@@ -3,11 +3,12 @@
 	"person1": {
 	"firstName": "John",
 	"secondName": "Snow",
-	"avatar": "https://en.wikipedia.org/wiki/File:Jon_Snow-Kit_Harington.jpg", "age": 25
+	"avatar": "https://en.wikipedia.org/wiki/File:Jon_Snow-Kit_Harington.jpg",
+    "age": 25
 	},
 	"person2": {
 	"firstName": "Daenerys", "secondName": "Targaryen",
-	"avatar": "https://en.wikipedia.org/wiki/File:Daenerys_Targaryen_with_Dragon-_Emilia_Clarke.jpg",
+	"avatar": "https://en.wikipedia.org/wiki/File:Daenerys_Targaryen_with_Dragon-Emilia_Clarke.jpg",
 	"age": 25 },
 	"person3": {
 	"firstName": "Eddard",

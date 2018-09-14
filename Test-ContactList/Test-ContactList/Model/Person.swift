@@ -49,42 +49,6 @@ class GetContactInfo {
             }
         }
     }
-
-    func downloadImage(url: URL) {
-          print("start")
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error != nil {
-                print("error")
-                return
-            }
-
-            DispatchQueue.main.async {
-//                self.avatarView.image = UIImage(data: data!)
-                print("main")
-            }
-            }.resume()
-         print("finish")
-    }
-    
-    func downloadImage(url: URL, complitionHandler: @escaping (UIImage?, Error?) -> Void) {
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error != nil {
-                print("error")
-                complitionHandler(nil, error)
-                return
-            }
-            
-            DispatchQueue.main.async {
-                complitionHandler(UIImage(data: data!), nil)
-                //                self.avatarView.image = UIImage(data: data!)
-                print("main")
-            }
-            }.resume()
-    }
-    
-    
-
-    
     
     func getArr() {
         
