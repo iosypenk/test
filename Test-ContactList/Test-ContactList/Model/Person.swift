@@ -27,11 +27,6 @@ struct Contacts : Decodable {
     let employees : Employees?
 }
 
-struct PersonData {
-    var info: Person?
-    var image: UIImage?
-}
-
 class GetContactInfo {
     
     var contactsArr = [Person]()
@@ -51,46 +46,7 @@ class GetContactInfo {
     }
     
     func getArr() {
-        
         guard let employees = self.contacts?.employees else { return }
-        
-//        if let person = employees.person1 {
-//            var newPerson = PersonData()
-//            newPerson.info = person
-//            if let urlString = person.avatar {
-//                if let url = URL(string: urlString){
-////                    downloadImage(url: url)
-//                    downloadImage(url: url, complitionHandler: { (image, error) in
-//                        DispatchQueue.main.async {
-//                            if let image = image {
-//                                newPerson.image = image
-//                            }
-//                        }
-//                    })
-//                }
-//            }
-//            contactsArr.append(newPerson)
-//        }
-//        if let person = employees.person2 {
-//            var newPerson = PersonData()
-//            newPerson.info = person
-//            contactsArr.append(newPerson)
-//        }
-//        if let person = employees.person3 {
-//            var newPerson = PersonData()
-//            newPerson.info = person
-//            contactsArr.append(newPerson)
-//        }
-//        if let person = employees.person4 {
-//            var newPerson = PersonData()
-//            newPerson.info = person
-//            contactsArr.append(newPerson)
-//        }
-//        if let person = employees.person5 {
-//            var newPerson = PersonData()
-//            newPerson.info = person
-//            contactsArr.append(newPerson)
-//        }
         
         if let person = employees.person1 {
             contactsArr.append(person)

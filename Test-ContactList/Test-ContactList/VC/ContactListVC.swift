@@ -10,8 +10,7 @@ import UIKit
 
 class ContactListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let data = GetContactInfo()
-    
+    let contactsData = GetContactInfo()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -27,23 +26,22 @@ class ContactListVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.contactsArr.count
+        return contactsData.contactsArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ContactsCell
-        let person = data.contactsArr[indexPath.row]
+        let person = contactsData.contactsArr[indexPath.row]
             cell.initCell(person: person)
     
         return cell
     }
 
     fileprivate func datarequest() {
-        data.getInfo { (res, error) in
+        contactsData.getInfo { (res, error) in
             DispatchQueue.main.async {
                 if res {
-                    print("getinfo")
-                    self.data.getArr()
+                    self.contactsData.getArr()
                     self.tableView.reloadData()
                 }
             }
