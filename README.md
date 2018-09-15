@@ -41,6 +41,6 @@ The task was to create a two-screens application. The first screen is a list of 
 
 ## Author
 
-iosypenk, e1osyp@gmail.com
+Ivan Osypenko, e1osyp@gmail.com
 
 
