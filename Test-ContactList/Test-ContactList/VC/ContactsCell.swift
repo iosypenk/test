@@ -12,7 +12,7 @@ class ContactsCell: UITableViewCell {
     
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var avatarView: UIImageView!
-    
+        
     func initCell(person: Person) {
         if let name = person.firstName {
             fullNameLabel.text = name
@@ -28,7 +28,6 @@ class ContactsCell: UITableViewCell {
             })
         }
     }
-    
 }
 
 

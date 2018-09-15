@@ -21,8 +21,22 @@ class ContactListVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         tableView.dataSource = self
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showDetails", sender: self)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        // Hide the Navigation Bar
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        // Show the Navigation Bar
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailsVC = segue.destination as? DetailsVC else { return }
+        detailsVC.personData = self.contactsData
+        detailsVC.index = tableView.indexPathForSelectedRow?.row
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,8 +46,7 @@ class ContactListVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ContactsCell
         let person = contactsData.contactsArr[indexPath.row]
-            cell.initCell(person: person)
-    
+        cell.initCell(person: person)
         return cell
     }
 
@@ -48,3 +61,4 @@ class ContactListVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
     }
 }
+
