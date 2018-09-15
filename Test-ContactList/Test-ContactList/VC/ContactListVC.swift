@@ -14,6 +14,9 @@ class ContactListVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var SecondName: UILabel!
+    @IBOutlet weak var firstName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         datarequest()

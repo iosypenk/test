@@ -10,7 +10,8 @@ import UIKit
 
 class ContactsCell: UITableViewCell {
     
-    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var firstName: UILabel!
+    @IBOutlet weak var secondName: UILabel!
     @IBOutlet weak var avatarView: UIImageView!
     
     func initCell(person: Person) {
@@ -22,7 +23,11 @@ class ContactsCell: UITableViewCell {
         avatarView.clipsToBounds = true
         
         if let name = person.firstName {
-            fullNameLabel.text = name
+          firstName.text = name
+        }
+        
+        if let surname = person.secondName {
+            secondName.text = surname
         }
         
         if let avatar = person.avatar {
