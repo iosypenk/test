@@ -12,8 +12,15 @@ class ContactsCell: UITableViewCell {
     
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var avatarView: UIImageView!
-        
+    
     func initCell(person: Person) {
+        
+        avatarView.layer.borderWidth = 1
+        avatarView.layer.masksToBounds = false
+        avatarView.layer.borderColor = UIColor.lightGray.cgColor
+        avatarView.layer.cornerRadius = avatarView.frame.width/2
+        avatarView.clipsToBounds = true
+        
         if let name = person.firstName {
             fullNameLabel.text = name
         }

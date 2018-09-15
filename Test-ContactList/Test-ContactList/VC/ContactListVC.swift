@@ -25,6 +25,7 @@ class ContactListVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         super.viewWillAppear(true)
         // Hide the Navigation Bar
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
