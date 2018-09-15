@@ -13,14 +13,15 @@ struct Person: Decodable {
     let secondName : String?
     let avatar : String?
     let age : Int?
+    var rate : Bool?
 }
 
 struct Employees: Decodable {
-    let person1 : Person?
-    let person2 : Person?
-    let person3 : Person?
-    let person4 : Person?
-    let person5 : Person?
+    var person1 : Person?
+    var person2 : Person?
+    var person3 : Person?
+    var person4 : Person?
+    var person5 : Person?
 }
 
 struct Contacts : Decodable {
@@ -32,6 +33,7 @@ class GetContactInfo {
     var contactsArr = [Person]()
     var contacts : Contacts?
     
+    //parsing json file
     func getInfo(complitionhandler: @escaping (Bool, Error?) -> Void) {
         if let path = Bundle.main.path(forResource: "Contacts", ofType: "json") {
             do {
@@ -45,6 +47,7 @@ class GetContactInfo {
         }
     }
     
+    //creation of array of Employees
     func getArr() {
         guard let employees = self.contacts?.employees else { return }
         

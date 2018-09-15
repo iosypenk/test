@@ -12,6 +12,7 @@ class ImageService {
     
     static let cache = NSCache<NSString, UIImage>()
 
+    //checks if avatar was already loaded
     static func getImage(urlString: String, complitionHandler: @escaping (UIImage?) -> Void) {
         if let image = cache.object(forKey: urlString as NSString) {
             complitionHandler(image)
@@ -59,6 +60,7 @@ class ImageService {
         }
     }
     
+    //gets image path from webpage
     fileprivate static func getImagePath(urlString: String) -> String? {
         if let url : URL = URL(string : urlString) {
             

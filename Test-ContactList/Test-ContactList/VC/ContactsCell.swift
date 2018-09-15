@@ -13,14 +13,27 @@ class ContactsCell: UITableViewCell {
     @IBOutlet weak var firstName: UILabel!
     @IBOutlet weak var secondName: UILabel!
     @IBOutlet weak var avatarView: UIImageView!
+    @IBOutlet weak var starView: UIImageView!
     
-    func initCell(person: Person) {
-        
+    func makeAvatarRounded() {
         avatarView.layer.borderWidth = 1
         avatarView.layer.masksToBounds = false
         avatarView.layer.borderColor = UIColor.lightGray.cgColor
         avatarView.layer.cornerRadius = avatarView.frame.width/2
         avatarView.clipsToBounds = true
+    }
+    
+    func initCell(person: Person) {
+        
+        makeAvatarRounded()
+        
+        if let star = person.rate{
+            if star == true {
+                starView.isHidden = false
+            } else {
+                starView.isHidden = true
+            }
+        }
         
         if let name = person.firstName {
           firstName.text = name
