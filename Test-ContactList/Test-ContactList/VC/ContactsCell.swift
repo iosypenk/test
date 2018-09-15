@@ -26,12 +26,11 @@ class ContactsCell: UITableViewCell {
     func initCell(person: Person) {
         
         makeAvatarRounded()
-        
-        if let star = person.rate{
+        starView.isHidden = true
+    
+        if let star = person.rate {
             if star == true {
                 starView.isHidden = false
-            } else {
-                starView.isHidden = true
             }
         }
         

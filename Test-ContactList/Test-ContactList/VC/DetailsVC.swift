@@ -39,7 +39,7 @@ class DetailsVC: UIViewController {
         avatarView.layer.cornerRadius = avatarView.frame.width/2
         avatarView.clipsToBounds = true
     }
-    func initProfile(person: Person?){
+    func initProfile(person: Person?) {
      
         guard let person = person else { return }
         
