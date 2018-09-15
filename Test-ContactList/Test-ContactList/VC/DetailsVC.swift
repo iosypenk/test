@@ -17,6 +17,10 @@ class DetailsVC: UIViewController {
     @IBOutlet weak var firstName: UILabel!
     @IBOutlet weak var secondName: UILabel!
     
+    @IBOutlet weak var detailsFirstName: UILabel!
+    @IBOutlet weak var detailsSecondName: UILabel!
+    @IBOutlet weak var detailsAge: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,7 +35,13 @@ class DetailsVC: UIViewController {
         
         firstName.text = person.firstName
         secondName.text = person.secondName
-        
+        detailsFirstName.text = person.firstName
+        detailsSecondName.text = person.secondName
+        if let ageInt = person.age {
+            let age: String = String(ageInt)
+            detailsAge.text = age
+        }
+     
         if let imgUrl = person.avatar {
             ImageService.getImage(urlString: imgUrl, complitionHandler: { (image) in
                 DispatchQueue.main.async {
