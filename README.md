@@ -15,7 +15,7 @@ The task was to create a two-screens application. The first screen is a list of 
 
 
 #### Landscape orientation
-<div align="justify">
+<div align="center">
  <img src="https://github.com/iosypenk/test/blob/master/ScreenShots/201.png" width="60%" />
  <img src="https://github.com/iosypenk/test/blob/master/ScreenShots/202.png" width="60%" />
 
